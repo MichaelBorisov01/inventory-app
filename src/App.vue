@@ -5,5 +5,9 @@
 </template>
 
 <script>
-export default {}
+import InventoryPage from './pages/InventoryPage.vue'
+
+export default {
+  components: { InventoryPage }
+}
 </script>

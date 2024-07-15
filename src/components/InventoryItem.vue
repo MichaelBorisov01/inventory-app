@@ -1,14 +1,10 @@
 <template>
-  <div class="inventory-item" @click="showDetails = true">
+  <div class="inventory-item" @dragstart="dragStart" @dragend="dragEnd">
     {{ item.name }}
-    <ItemDetails v-if="showDetails" :item="item" @close="showDetails = false" />
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
-import ItemDetails from './ItemDetails.vue'
-
 export default {
   props: {
     item: {
@@ -17,9 +13,14 @@ export default {
     }
   },
   setup(props) {
-    const showDetails = ref(false)
+    const dragStart = (event) => {
+      event.dataTransfer.effectAllowed = 'move'
+      event.dataTransfer.setData('text/plain', props.item.id)
+    }
 
-    return { showDetails }
+    const dragEnd = () => {}
+
+    return { dragStart, dragEnd }
   }
 }
 </script>
@@ -34,6 +35,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: move;
 }
 </style>
