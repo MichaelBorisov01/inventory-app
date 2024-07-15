@@ -1,0 +1,79 @@
+@import '~vuetify/dist/vuetify.min.css';
+
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  margin: 20px;
+}
+
+.inventory-page {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.inventory {
+  flex: 1;
+  padding: 20px;
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.inventory-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.item-details {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.remove-mode {
+  margin-top: 20px;
+}
+
+.footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
